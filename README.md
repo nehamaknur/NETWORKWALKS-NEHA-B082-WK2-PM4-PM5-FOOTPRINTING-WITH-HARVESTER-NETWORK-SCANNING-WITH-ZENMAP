@@ -19,7 +19,7 @@ Building an authorized reconnaissance and mapping framework combining external O
 | :--- | :--- |
 | **Pentester Name** | Neha Maknur |
 | **Batch** | B083 \| NetworkWalks Cybersecurity Internship |
-| **Date** | 7 September 2026 |
+| **Date** | 16 September 2026 |
 | **Modules Completed** | W2-PM4: theHarvester-based Footprinting <br> W2-PM5: Network Scanning with Zenmap |
 | **Client / Target** | 1. `networkwalks.com` (written permission secured) <br> 2. My own local VirtualBox host-only LAN |
 | **Permission Secured** | ✅ Yes |
