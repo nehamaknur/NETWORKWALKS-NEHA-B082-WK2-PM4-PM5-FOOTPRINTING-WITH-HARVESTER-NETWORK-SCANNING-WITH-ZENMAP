@@ -1,0 +1,88 @@
+# Penetration Testing Report: Footprinting & Network Scanning (theHarvester & Zenmap)
+
+## W2-PM-FINAL | CYBERSECURITY | NETWORKWALKS ACADEMY
+
+| Field | Details |
+| :--- | :--- |
+| **Pentester Name** | Neha Maknur |
+| **Batch** | B083 \| NetworkWalks Cybersecurity Internship |
+| **Date** | 7 September 2026 |
+| **Modules Completed** | W2-PM4: theHarvester-based Footprinting <br> W2-PM5: Network Scanning with Zenmap |
+| **Client / Target** | 1. `networkwalks.com` (written permission secured) <br> 2. My own local VirtualBox host-only LAN |
+| **Permission Secured** | ✅ Yes |
+| **Phases Covered** | Phase 1: Reconnaissance & Footprinting <br> Phase 2: Scanning & Network Discovery <br> Phase 3–5: In Progress |
+
+---
+
+## ## 1. Liability Disclaimer
+I have performed these activities only on the systems & devices where I had secured written permission or the devices/systems that I own myself. All these materials are for education and research purpose only. Do not use anything from here to break the law. The instructor, the authors and Networkwalks are not responsible for what you do with this knowledge. Every action you take is your own responsibility. Misuse can lead to criminal charges, heavy fines, loss of your job and a permanent record. In most countries unauthorised access is a crime even when nothing is damaged.
+
+---
+
+## 📌 2. Introduction & Overview
+This repository documents practical cybersecurity lab work completed as part of the Networkwalks internship program. The project covers two core phases:
+1. **Footprinting & Reconnaissance**: Gathering public-facing intelligence, email addresses (`viva-noreply@microsoft.com`), and subdomains on target domains using **theHarvester** on Kali Linux.
+2. **Network Discovery & Scanning**: Performing local subnet configuration checks via Windows `ipconfig`, live host enumeration, and topology mapping using **Zenmap**.
+
+---
+
+## 🛠️ 3. Tools & Technologies Used
+| Tool / Technology | Purpose / Function |
+| :--- | :--- |
+| **Kali Linux** | Operating system environment utilized for running theHarvester command-line operations. |
+| **Windows OS** | Local platform hosting Zenmap, command prompt (`cmd`), and local interface settings. |
+| **theHarvester** | Open Source Intelligence (OSINT) reconnaissance tool used to gather emails, subdomains, and host data from public sources. |
+| **Zenmap (Nmap GUI)** | Graphical user interface for Nmap used to execute ping sweeps, discover hosts, and map network topologies. |
+
+---
+
+## ⚙️ 4. Methodology & Execution
+
+### Phase 1: Passive Reconnaissance & Footprinting (theHarvester)
+* **Help & Usage Verification**: Inspected tool parameters and guidelines using command-line options (`theHarvester -h`) to understand syntax flags like domain selection (`-d`), result limits (`-l`), and data sources (`-b`).
+* **Task 1 (Baidu Source Query)**: Executed targeted search against `microsoft.com` using the Baidu module with a result limit of 1000:
+  ```bash
+  theHarvester -d microsoft.com -l 1000 -b baidu
+
+  ### Task 2 (Multi-Source Enumeration)
+* **Objective**: Find email IDs and subdomains related to the target organization `microsoft.com` using theHarvester in Kali Linux with all sources, setting the result limit to 50.
+* **Execution Command**:
+  ```bash
+  theHarvester -d microsoft.com -l 50 -b all
+
+### Phase 2: Active Network Discovery & Mapping (Zenmap)
+* Opened Windows Command Prompt and executed `ipconfig` to determine local interface configurations under the Wireless LAN adapter Wi-Fi (`IPv4 Address: 10.138.53.49`, `Subnet Mask: 255.255.255.0`, `Default Gateway: 10.138.53.36`).
+* Entered the local subnet range (`10.138.53.0/24`) into Zenmap, selected the **Ping scan** profile, and executed the underlying command:
+  ```bash
+  nmap -sn 10.138.53.0/24
+  
+### Topology Mapping & Evidence
+* Switched to Zenmap’s **Topology** tab to visualize the discovered nodes relative to `localhost`.
+* Analyzed the generated node layout mapping the active endpoints `10.138.53.49` and `10.138.53.36` around the central controller node.
+* Utilized the **Topology Legend** interface to verify host status classifications, confirming hosts with fewer than 3 open ports (indicated by green nodes) resulting from the ping sweep.
+
+* ### Phase 4: Results & Evidence Documentation
+* **Zenmap Host Discovery Results**: 
+  * Executed the ping sweep command (`nmap -sn 10.138.53.0/24`) targeting the local subnet.
+  * Successfully identified 2 active live hosts out of 256 scanned IP addresses (`10.138.53.36` and `10.138.53.49`) in 7.65 seconds.
+  * Captured target MAC address details (`F2:4A:51:66:15:EA`) associated with the active gateway node.
+* **Network Topology Generation**: 
+  * Switched to the **Topology** tab in Zenmap to visually map discovered nodes relative to `localhost`.
+  * Verified green node indicators confirming hosts with fewer than 3 open ports based on the active ping scan profile.
+ 
+## 🛡️ Consolidated Security Assessment & Risk Matrix
+
+| # | Identified Vulnerability / Finding | Risk Rating | Remediation & Mitigation Strategy |
+| :--- | :--- | :--- | :--- |
+| **1** | External OSINT exposure of organizational metadata, emails, and surface footprints. | 🟠 Medium | Periodically audit and minimize the footprint of corporate identifiers and email addresses exposed on public search engines. |
+| **2** | Enumeration of secondary web subdomains revealing additional surface endpoints. | 🟠 Medium | Maintain rigorous API configurations, secure backend intelligence endpoints, and restrict unnecessary public subdomains. |
+| **3** | Unmonitored active hosts and open interfaces exposed during local subnet ping sweeps. | 🟠 Medium | Implement strict internal asset management inventories, firewall rules, and network access controls. |
+| **4** | Operational syntax errors and incorrect network interface bindings during active phases. | 🟡 Low | Enforce strict syntax validation, double-check active `ipconfig` configurations, and maintain precise execution logs. |
+## 🏁 Conclusion
+This project successfully demonstrated the practical application of foundational reconnaissance and network discovery methodologies through structured security lab exercises. 
+
+* **Passive Reconnaissance**: Utilizing **theHarvester** on Kali Linux highlighted how OSINT techniques can effectively harvest target email addresses and map organizational attack surfaces from public-facing sources without interacting directly with target infrastructure.
+* **Active Network Scanning**: Using **Zenmap** and Windows interface diagnostics (`ipconfig`) provided hands-on experience in identifying local subnets, executing ping sweeps, enumerating active live hosts, and mapping visual network topologies.
+* **Operational Awareness**: Documenting challenges such as interface selection errors and command-line syntax precision reinforced the importance of meticulous execution and rigorous scope enforcement in professional security assessments.
+
+Overall, the tasks completed under the Networkwalks Cybersecurity Internship successfully bridged theoretical concepts with practical defensive and offensive visibility principles.
