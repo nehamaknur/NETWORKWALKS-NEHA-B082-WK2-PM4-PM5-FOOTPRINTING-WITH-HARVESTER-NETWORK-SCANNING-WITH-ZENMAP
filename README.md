@@ -93,6 +93,8 @@ This repository documents practical cybersecurity lab work completed as part of 
   ```bash
   nmap -sn 10.138.53.0/24
 
+ ![Ping Scan Output Evidence](4-Screenshot-Zenmap-pingscan.png)
+
  * **Topology Mapping & Evidence**
    * **Switched to Zenmap’s **Topology** tab to visualize the discovered nodes relative to `localhost`.**
    * **Analyzed the generated node layout mapping the active endpoints `10.138.53.49` and `10.138.53.36` around the central controller node.**
