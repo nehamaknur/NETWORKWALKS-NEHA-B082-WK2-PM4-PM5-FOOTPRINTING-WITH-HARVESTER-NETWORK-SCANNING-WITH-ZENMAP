@@ -99,6 +99,8 @@ This repository documents practical cybersecurity lab work completed as part of 
    * **Switched to Zenmap’s **Topology** tab to visualize the discovered nodes relative to `localhost`.**
    * **Analyzed the generated node layout mapping the active endpoints `10.138.53.49` and `10.138.53.36` around the central controller node.**
    * **Utilized the **Topology Legend** interface to verify host status classifications, confirming hosts with fewer than 3 open ports (indicated by green nodes) resulting from the ping sweep.**
+     
+![Ping Scan Output Evidence](5-Screenshot-Zenmap-topology.png)
 
 * ### Phase 4: Results & Evidence Documentation
 * **Zenmap Host Discovery Results**: 
