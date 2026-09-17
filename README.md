@@ -102,7 +102,13 @@ This repository documents practical cybersecurity lab work completed as part of 
      
 ![Ping Scan Output Evidence](5-Screenshot-Zenmap-topology.png)
 
-* ### Phase 4: Results & Evidence Documentation
+## 📋 Lab Assessment & Execution
+
+Successfully completed and verified the Zenmap Network Scanning practice lab assessment, demonstrating practical proficiency in mapping network topologies and analyzing scan results.
+
+![Practice Lab Score Assessment Result](6-Screenshot-Practice-lab-score.png)
+
+* ### Results & Evidence Documentation
 * **Zenmap Host Discovery Results**: 
   * Executed the ping sweep command (`nmap -sn 10.138.53.0/24`) targeting the local subnet.
   * Successfully identified 2 active live hosts out of 256 scanned IP addresses (`10.138.53.36` and `10.138.53.49`) in 7.65 seconds.
