@@ -34,7 +34,7 @@ I have performed these activities only on the systems & devices where I had secu
 
 ## 📌 2. Introduction & Overview
 This repository documents practical cybersecurity lab work completed as part of the Networkwalks internship program. The project covers two core phases:
-1. **Footprinting & Reconnaissance**: Gathering public-facing intelligence, email addresses (`viva-noreply@microsoft.com`), and subdomains on target domains using **theHarvester** on Kali Linux.
+1. **Footprinting & Reconnaissance**: Gathering public-facing intelligence, email addresses and subdomains on target domains using **theHarvester** on Kali Linux.
 2. **Network Discovery & Scanning**: Performing local subnet configuration checks via Windows `ipconfig`, live host enumeration, and topology mapping using **Zenmap**.
 
 ---
