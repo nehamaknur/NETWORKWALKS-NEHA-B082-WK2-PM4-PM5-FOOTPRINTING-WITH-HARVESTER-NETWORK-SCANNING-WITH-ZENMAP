@@ -86,6 +86,9 @@ This repository documents practical cybersecurity lab work completed as part of 
 ### Phase 2: Network Scanning with Zenmap
 
 * Opened Windows Command Prompt and executed `ipconfig` to determine local interface configurations under the Wireless LAN adapter Wi-Fi (`IPv4 Address: 10.138.53.49`, `Subnet Mask: 255.255.255.0`, `Default Gateway: 10.138.53.36`).
+
+![IP Configuration Output Evidence](3-Screenshot-ipconfig.png)
+
 * Entered the local subnet range (`10.138.53.0/24`) into Zenmap, selected the **Ping scan** profile, and executed the underlying command:
   ```bash
   nmap -sn 10.138.53.0/24
@@ -137,7 +140,7 @@ Overall, the tasks completed under the Networkwalks Cybersecurity Internship suc
 B.Sc. Computer Science Graduate |
 Aspiring Cyber Security Professional
 
-LinkedIn: (https://lnkd.in/p/d3URNTtf)
+LinkedIn: https://lnkd.in/p/dA5QnWVy
 
 ## 🗂️ Project Information
 
