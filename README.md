@@ -62,7 +62,7 @@ This repository documents practical cybersecurity lab work completed as part of 
     ```bash
     cat task1.txt
     ```
-![Task 1 Output Evidence]("1-Screenshot-harvester-baidu-scan.png") 
+![Task 1 Output Evidence](1-Screenshot-harvester-baidu-scan.png) 
 
 * **Task 2 (Multi-Source Enumeration)**: Executed broader searches against `microsoft.com` using all available sources (`all`) with a result limit of 50 and saving the text file as evidence using `cat task2.txt`:
   * **Execution Command**:
