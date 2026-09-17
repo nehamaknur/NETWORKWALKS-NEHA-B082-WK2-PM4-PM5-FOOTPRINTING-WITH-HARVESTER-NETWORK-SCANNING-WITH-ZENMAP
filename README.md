@@ -119,6 +119,17 @@ Successfully completed and verified the Zenmap Network Scanning practice lab ass
 | **2** | Enumeration of secondary web subdomains revealing additional surface endpoints. | 🟠 Medium | Maintain rigorous API configurations, secure backend intelligence endpoints, and restrict unnecessary public subdomains. |
 | **3** | Unmonitored active hosts and open interfaces exposed during local subnet ping sweeps. | 🟠 Medium | Implement strict internal asset management inventories, firewall rules, and network access controls. |
 | **4** | Operational syntax errors and incorrect network interface bindings during active phases. | 🟡 Low | Enforce strict syntax validation, double-check active `ipconfig` configurations, and maintain precise execution logs. |
+
+## 🛠️ Challenges Encountered & Solutions
+
+* **A. Network Interface Selection Discrepancy**
+  * **Issue**: Initial attempts to define the Zenmap scan range mistakenly pulled parameters from an inactive virtual interface (`Ethernet adapter Ethernet` / `192.168.56.1`) instead of the live wireless connection.
+  * **Resolution**: Re-ran the `ipconfig` utility to systematically trace the correct active medium (`Wireless LAN adapter Wi-Fi`), shifting the operational scope accurately to the `10.138.53.0/24` subnet.
+
+* **B. Command-Line Precision & Syntax Errors**
+  * **Issue**: During evidence logging, an attempt to inspect local text logs created via `cat` resulted in a syntax mistake (`tas1.txt` instead of `task1.txt`).
+  * **Security Insight**: This minor typographical error immediately triggered file lookup exceptions, highlighting how absolute string precision and rigorous command habits dictate success in technical security operations.
+  * 
 ## 🏁 Conclusion
 This project successfully demonstrated the practical application of foundational reconnaissance and network discovery methodologies through structured security lab exercises. 
 
