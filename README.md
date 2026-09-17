@@ -1,5 +1,19 @@
-# Penetration Testing Report: Footprinting & Network Scanning (theHarvester & Zenmap)
+# 🛡️ Penetration Testing Report: Footprinting & Network Scanning (theHarvester & Zenmap)
 
+Building an authorized reconnaissance and mapping framework combining external OSINT collection via **theHarvester** and internal subnet discovery via **Zenmap**.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/PROJECT-FOOTPRINTING_%26_SCANNING-blueviolet?style=for-the-badge">
+  <img src="https://img.shields.io/badge/TARGETS-MICROSOFT.COM_%7C_10.138.53.0%2F24-orange?style=for-the-badge">
+  <img src="https://img.shields.io/badge/OS-KALI_LINUX_%2F_WINDOWS-success?style=for-the-badge">
+  <img src="https://img.shields.io/badge/TOOLKIT-THEHARVESTER_%2F_ZENMAP-informational?style=for-the-badge">
+  <img src="https://img.shields.io/badge/SKILL-RECONNAISSANCE_%26_MAPPING-critical?style=for-the-badge">
+  <img src="https://img.shields.io/badge/INTERNSHIP-NETWORKWALKS_B083-yellowgreen?style=for-the-badge">
+  <img src="https://img.shields.io/badge/GITHUB-CORTEXNEHA-black?style=for-the-badge">
+  <img src="https://img.shields.io/badge/AUTHOR-NEHA_MAKNUR-blue?style=for-the-badge">
+</p>
+
+---
 ## W2-PM-FINAL | CYBERSECURITY | NETWORKWALKS ACADEMY
 
 | Field | Details |
@@ -40,17 +54,28 @@ This repository documents practical cybersecurity lab work completed as part of 
 
 ### Phase 1: Passive Reconnaissance & Footprinting (theHarvester)
 * **Help & Usage Verification**: Inspected tool parameters and guidelines using command-line options (`theHarvester -h`) to understand syntax flags like domain selection (`-d`), result limits (`-l`), and data sources (`-b`).
-* **Task 1 (Baidu Source Query)**: Executed targeted search against `microsoft.com` using the Baidu module with a result limit of 1000:
-  ```bash
-  theHarvester -d microsoft.com -l 1000 -b baidu
+* **Task 1 (Baidu Source Query)**: Executed targeted search against `microsoft.com` using the Baidu module with a result limit of 1000 and saving the text file as evidence using `cat task1.txt`:
+  * **Execution Command**:
+    ```bash
+    theHarvester -d microsoft.com -l 1000 -b baidu
+    ```
+  * **Output Evidence**:
+    ```bash
+    cat task1.txt
+    ```
 
-  ### Task 2 (Multi-Source Enumeration)
-* **Objective**: Find email IDs and subdomains related to the target organization `microsoft.com` using theHarvester in Kali Linux with all sources, setting the result limit to 50.
-* **Execution Command**:
-  ```bash
-  theHarvester -d microsoft.com -l 50 -b all
+* **Task 2 (Multi-Source Enumeration)**: Executed broader searches against `microsoft.com` using all available sources (`all`) with a result limit of 50 and saving the text file as evidence using `cat task2.txt`:
+  * **Execution Command**:
+    ```bash
+    theHarvester -d microsoft.com -l 50 -b all
+    ```
+  * **Output Evidence**:
+    ```bash
+    cat task2.txt
+    ```
 
 ### Phase 2: Active Network Discovery & Mapping (Zenmap)
+
 * Opened Windows Command Prompt and executed `ipconfig` to determine local interface configurations under the Wireless LAN adapter Wi-Fi (`IPv4 Address: 10.138.53.49`, `Subnet Mask: 255.255.255.0`, `Default Gateway: 10.138.53.36`).
 * Entered the local subnet range (`10.138.53.0/24`) into Zenmap, selected the **Ping scan** profile, and executed the underlying command:
   ```bash
