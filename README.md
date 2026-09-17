@@ -133,8 +133,8 @@ Successfully completed and verified the Zenmap Network Scanning practice lab ass
 ## 🏁 Conclusion
 This project successfully demonstrated the practical application of foundational reconnaissance and network discovery methodologies through structured security lab exercises. 
 
-* **Passive Reconnaissance**: Utilizing **theHarvester** on Kali Linux highlighted how OSINT techniques can effectively harvest target email addresses and map organizational attack surfaces from public-facing sources without interacting directly with target infrastructure.
-* **Active Network Scanning**: Using **Zenmap** and Windows interface diagnostics (`ipconfig`) provided hands-on experience in identifying local subnets, executing ping sweeps, enumerating active live hosts, and mapping visual network topologies.
+* **Footprinting & Reconnaissance**: Utilizing **theHarvester** on Kali Linux highlighted how OSINT techniques can effectively harvest target email addresses and map organizational attack surfaces from public-facing sources without interacting directly with target infrastructure.
+* **Network Scanning**: Using **Zenmap** and Windows interface diagnostics (`ipconfig`) provided hands-on experience in identifying local subnets, executing ping sweeps, enumerating active live hosts, and mapping visual network topologies.
 * **Operational Awareness**: Documenting challenges such as interface selection errors and command-line syntax precision reinforced the importance of meticulous execution and rigorous scope enforcement in professional security assessments.
 
 Overall, the tasks completed under the Networkwalks Cybersecurity Internship successfully bridged theoretical concepts with practical defensive and offensive visibility principles.
