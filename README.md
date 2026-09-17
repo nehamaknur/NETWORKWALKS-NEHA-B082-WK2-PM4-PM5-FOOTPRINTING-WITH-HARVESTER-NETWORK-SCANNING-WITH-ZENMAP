@@ -95,10 +95,13 @@ This repository documents practical cybersecurity lab work completed as part of 
 
  ![Ping Scan Output Evidence](4-Screenshot-Zenmap-pingscan.png)
 
- * **Topology Mapping & Evidence**
-   * **Switched to Zenmap’s **Topology** tab to visualize the discovered nodes relative to `localhost`.**
-   * **Analyzed the generated node layout mapping the active endpoints `10.138.53.49` and `10.138.53.36` around the central controller node.**
-   * **Utilized the **Topology Legend** interface to verify host status classifications, confirming hosts with fewer than 3 open ports (indicated by green nodes) resulting from the ping sweep.**
+   * **Zenmap Host Discovery Results**:
+     * Executed the ping sweep command (`nmap -sn 10.138.53.0/24`) targeting the local subnet.
+     * Successfully identified 2 active live hosts out of 256 scanned IP addresses (`10.138.53.36` and `10.138.53.49`) in 7.65 seconds.
+     * Captured target MAC address details (`F2:4A:51:66:15:EA`) associated with the active gateway node.
+  * **Network Topology Generation**:
+    * Switched to the **Topology** tab in Zenmap to visually map discovered nodes relative to `localhost`.
+    * Verified green node indicators confirming hosts with fewer than 3 open ports based on the active ping scan profile.
      
 ![Ping Scan Output Evidence](5-Screenshot-Zenmap-topology.png)
 
@@ -108,15 +111,6 @@ Successfully completed and verified the Zenmap Network Scanning practice lab ass
 
 ![Practice Lab Score Assessment Result](6-Screenshot-Practice-lab-score.png)
 
-* ### Results & Evidence Documentation
-* **Zenmap Host Discovery Results**: 
-  * Executed the ping sweep command (`nmap -sn 10.138.53.0/24`) targeting the local subnet.
-  * Successfully identified 2 active live hosts out of 256 scanned IP addresses (`10.138.53.36` and `10.138.53.49`) in 7.65 seconds.
-  * Captured target MAC address details (`F2:4A:51:66:15:EA`) associated with the active gateway node.
-* **Network Topology Generation**: 
-  * Switched to the **Topology** tab in Zenmap to visually map discovered nodes relative to `localhost`.
-  * Verified green node indicators confirming hosts with fewer than 3 open ports based on the active ping scan profile.
- 
 ## 🛡️ Consolidated Security Assessment & Risk Matrix
 
 | # | Identified Vulnerability / Finding | Risk Rating | Remediation & Mitigation Strategy |
