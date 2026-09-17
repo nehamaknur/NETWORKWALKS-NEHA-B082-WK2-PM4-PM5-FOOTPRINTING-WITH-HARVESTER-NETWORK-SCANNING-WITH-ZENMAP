@@ -23,7 +23,7 @@ Building an authorized reconnaissance and mapping framework combining external O
 | **Modules Completed** | W2-PM4: theHarvester-based Footprinting <br> W2-PM5: Network Scanning with Zenmap |
 | **Client / Target** | 1. `networkwalks.com` (written permission secured) <br> 2. My own local VirtualBox host-only LAN |
 | **Permission Secured** | ✅ Yes |
-| **Phases Covered** | Phase 1: Reconnaissance & Footprinting <br> Phase 2: Scanning & Network Discovery <br> Phase 3–5: In Progress |
+| **Phases Covered** | Phase 1: Footprinting & Reconnaissance with theHARVESTER <br> Phase 2: Network Scanning with Zenmap <br> Phase 3–5: In Progress |
 
 ---
 
@@ -34,8 +34,8 @@ I have performed these activities only on the systems & devices where I had secu
 
 ## 📌 2. Introduction & Overview
 This repository documents practical cybersecurity lab work completed as part of the Networkwalks internship program. The project covers two core phases:
-1. **Footprinting & Reconnaissance**: Gathering public-facing intelligence, email addresses and subdomains on target domains using **theHarvester** on Kali Linux.
-2. **Network Discovery & Scanning**: Performing local subnet configuration checks via Windows `ipconfig`, live host enumeration, and topology mapping using **Zenmap**.
+1. **Footprinting & Reconnaissance with theHARVESTER**: Gathering public-facing intelligence, email addresses and subdomains on target domains using **theHarvester** on Kali Linux.
+2. **Network Scanning with Zenmap**: Performing local subnet configuration checks via Windows `ipconfig`, live host enumeration, and topology mapping using **Zenmap**.
 
 ---
 
@@ -51,7 +51,7 @@ This repository documents practical cybersecurity lab work completed as part of 
 
 ## ⚙️ 4. Methodology & Execution
 
-### Phase 1: Passive Reconnaissance & Footprinting (theHarvester)
+### Phase 1: Footprinting & Reconnaissance with theHARVESTER
 * **Help & Usage Verification**: Inspected tool parameters and guidelines using command-line options (`theHarvester -h`) to understand syntax flags like domain selection (`-d`), result limits (`-l`), and data sources (`-b`).
 * **Task 1 (Baidu Source Query)**: Executed targeted search against `microsoft.com` using the Baidu module with a result limit of 1000 and saving the text file as evidence using `cat task1.txt`:
   * **Execution Command**:
@@ -62,7 +62,11 @@ This repository documents practical cybersecurity lab work completed as part of 
     ```bash
     cat task1.txt
     ```
-![Task 1 Output Evidence](1-Screenshot-harvester-baidu-scan.png) 
+  ![Task 1 Output Evidence](1-Screenshot-harvester-baidu-scan.png)
+  
+  * **Analysis & Objective**:
+    * **What we are trying to prove**: Assesses how much organization-specific infrastructure is publicly discoverable via an eastern search engine module (`baidu`) without interacting directly with the target network.
+    * **What is shown**: The output displays raw OSINT data harvested from Baidu, including discovered subdomains and associated IP addresses tied to `microsoft.com`.
 
 * **Task 2 (Multi-Source Enumeration)**: Executed broader searches against `microsoft.com` using all available sources (`all`) with a result limit of 50 and saving the text file as evidence using `cat task2.txt`:
   * **Execution Command**:
@@ -73,18 +77,23 @@ This repository documents practical cybersecurity lab work completed as part of 
     ```bash
     cat task2.txt
     ```
+  ![Task 2 Output Evidence](2-Screenshot-harvester-all-scan.png)
+  
+  * **Analysis & Objective**:
+    * **What we are trying to prove**: Demonstrates the capabilities and limitations of automated multi-source enumeration (`all`), showing how the tool attempts to aggregate intelligence across a wide spectrum of public and proprietary OSINT feeds simultaneously.
+    * **What is shown**: The output displays harvested asset data alongside explicit warning messages (`[-] API key missing`) for services such as **Bitbucket, Brave Search, Shodan, SecurityTrails, and others**. This proves that while public search modules execute successfully, restricted commercial or registration-bound modules are automatically bypassed due to unconfigured API credentials, limiting the scan strictly to free/unauthenticated data channels..
 
-### Phase 2: Active Network Discovery & Mapping (Zenmap)
+### Phase 2: Network Scanning with Zenmap
 
 * Opened Windows Command Prompt and executed `ipconfig` to determine local interface configurations under the Wireless LAN adapter Wi-Fi (`IPv4 Address: 10.138.53.49`, `Subnet Mask: 255.255.255.0`, `Default Gateway: 10.138.53.36`).
 * Entered the local subnet range (`10.138.53.0/24`) into Zenmap, selected the **Ping scan** profile, and executed the underlying command:
   ```bash
   nmap -sn 10.138.53.0/24
-  
-### Topology Mapping & Evidence
-* Switched to Zenmap’s **Topology** tab to visualize the discovered nodes relative to `localhost`.
-* Analyzed the generated node layout mapping the active endpoints `10.138.53.49` and `10.138.53.36` around the central controller node.
-* Utilized the **Topology Legend** interface to verify host status classifications, confirming hosts with fewer than 3 open ports (indicated by green nodes) resulting from the ping sweep.
+
+ * **Topology Mapping & Evidence**
+   * **Switched to Zenmap’s **Topology** tab to visualize the discovered nodes relative to `localhost`.**
+   * **Analyzed the generated node layout mapping the active endpoints `10.138.53.49` and `10.138.53.36` around the central controller node.**
+   * **Utilized the **Topology Legend** interface to verify host status classifications, confirming hosts with fewer than 3 open ports (indicated by green nodes) resulting from the ping sweep.**
 
 * ### Phase 4: Results & Evidence Documentation
 * **Zenmap Host Discovery Results**: 
