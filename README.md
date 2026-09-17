@@ -126,7 +126,7 @@ Overall, the tasks completed under the Networkwalks Cybersecurity Internship suc
 - **Oracle VM VirtualBox 7.1.18** — ([Download Link](https://www.virtualbox.org/wiki/Downloads))
 - **Kali Linux 2026.1** — ([Download Link](https://www.kali.org/get-kali/))
 - **theHarvester** — Open-source intelligence (OSINT) and footprinting tool
-- **Zenmap** —([Download Link]((https://nmap.org/download.html)/))
+- **Zenmap** —([Download Link](https://nmap.org/download.html))
 - **7-Zip** — ([Download Link](https://www.7-zip.org/download.html))
 - **GitHub** — ([GitHub Platform](https://github.com/))
 
