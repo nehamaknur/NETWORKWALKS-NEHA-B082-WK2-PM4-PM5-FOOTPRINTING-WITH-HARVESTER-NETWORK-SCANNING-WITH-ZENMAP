@@ -120,3 +120,26 @@ This project successfully demonstrated the practical application of foundational
 * **Operational Awareness**: Documenting challenges such as interface selection errors and command-line syntax precision reinforced the importance of meticulous execution and rigorous scope enforcement in professional security assessments.
 
 Overall, the tasks completed under the Networkwalks Cybersecurity Internship successfully bridged theoretical concepts with practical defensive and offensive visibility principles.
+
+## 🛠️ Tools Used
+
+- **Oracle VM VirtualBox 7.1.18** — ([Download Link](https://www.virtualbox.org/wiki/Downloads))
+- **Kali Linux 2026.1** — ([Download Link](https://www.kali.org/get-kali/))
+- **theHarvester** — Open-source intelligence (OSINT) and footprinting tool
+- **Zenmap** —([Download Link]((https://nmap.org/download.html)/))
+- **7-Zip** — ([Download Link](https://www.7-zip.org/download.html))
+- **GitHub** — ([GitHub Platform](https://github.com/))
+
+---
+# 👤 Author
+
+**Neha Maknur**
+B.Sc. Computer Science Graduate |
+Aspiring Cyber Security Professional
+
+LinkedIn: (https://lnkd.in/p/d3URNTtf)
+
+## 🗂️ Project Information
+
+**Program Name:** Cybersecurity at Networkwalks | **Week:** 02 | **Project:** Penetration Testing Report: Footprinting & Network Scanning (theHarvester & Zenmap)| **Repository:** GitHub
+
